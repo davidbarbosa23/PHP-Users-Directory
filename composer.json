@@ -1,0 +1,23 @@
+{
+    "name": "davidbarbosa23/php-users-directory",
+    "description": "Test for PHP Backend position",
+    "type": "project",
+    "require": {
+        "illuminate/auth": "^8.6",
+        "illuminate/database": "^8.6",
+        "illuminate/routing": "^8.6",
+        "jenssegers/blade": "^1.4",
+        "vlucas/phpdotenv": "^5.2"
+    },
+    "require-dev": {
+        "php": "^7.4",
+        "phpunit/phpunit": "^9.3"
+    },
+    "authors": [
+        {
+            "name": "David Barbosa",
+            "email": "davidbarbosa.dev@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}
