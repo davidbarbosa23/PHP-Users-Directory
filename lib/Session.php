@@ -1,12 +1,12 @@
 <?php
 
-use App\Models\User;
+use App\Models\Users;
 
 class Session
 {
     public function __construct()
     {
-        if(!isset($_SESSION) && env('APP_ENV') != 'testing') {
+        if (!isset($_SESSION) && env('APP_ENV') != 'testing') {
             session_start();
         }
 
@@ -29,7 +29,7 @@ class Session
         return false;
     }
 
-    public function start(User $user)
+    public function start(Users $user)
     {
         unset($user->password);
         $this->set('user', $user);
@@ -38,7 +38,7 @@ class Session
 
     public function end()
     {
-        if(!isset($_SESSION)) {
+        if (isset($_SESSION)) {
             session_destroy();
         }
     }

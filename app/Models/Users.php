@@ -31,4 +31,22 @@ class Users extends Model
         );
     }
 
+    public function register(\Request $request)
+    {
+        $this->name = $request->get('name');
+        $this->email = $request->get('email');
+        $this->country_id = $request->get('country_id');
+        $this->password = password_hash($request->get('password'), PASSWORD_BCRYPT);
+
+        return $this->save();
+    }
+
+    public function search($data)
+    {
+        $data = '%' . $data . '%';
+        return $this
+            ->where('name', 'like', $data)
+            ->orWhere('email', 'like', $data)
+            ->get();
+    }
 }

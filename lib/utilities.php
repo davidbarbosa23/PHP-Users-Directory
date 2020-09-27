@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\User;
+use App\Models\Users;
 
 if (!function_exists('dd')) {
     function dd(...$values)
@@ -27,12 +27,9 @@ if (!function_exists('json')) {
 }
 
 if (!function_exists('validate')) {
-    function validate(
-        $rules,
-        $customMessages = []
-    ) {
-        $setMessageError = function ($customMessages, $type, $field, $value = null)
-        {
+    function validate(\Request $request, $rules, $customMessages = [])
+    {
+        $setMessageError = function ($customMessages, $type, $field, $value = null) {
             $messages = [
                 'required' => 'The :attribute field is required.',
                 'email' => 'The :attribute must be a valid email address.',
@@ -49,7 +46,6 @@ if (!function_exists('validate')) {
             return $message;
         };
 
-        $request = new \Request;
         $errors = [];
         foreach ($rules as $field => $rule) {
             $rulesField = explode('|', $rule);
@@ -78,7 +74,7 @@ if (!function_exists('validate')) {
                         }
                         break;
                     case 'unique':
-                        $exist = User::where($field, $request->get($field))->exists();
+                        $exist = Users::where($field, $request->get($field))->exists();
                         if ($exist) {
                             $isError = true;
                         }
