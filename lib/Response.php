@@ -4,7 +4,7 @@ use Jenssegers\Blade\Blade;
 
 class Response
 {
-    static function view($view, $params = [])
+    public static function view($view, $params = [])
     {
         $blade = new Blade(
             VIEWS_PATH,
@@ -14,7 +14,7 @@ class Response
         return $blade->make($view, $params);
     }
 
-    static function json($data, $code = 200)
+    public static function json($data, $code = 200)
     {
         header_remove();
         http_response_code($code);
@@ -33,7 +33,7 @@ class Response
         return json_encode($data);
     }
 
-    static function redirect($url)
+    public static function redirect($url)
     {
         if (env('APP_ENV') != 'testing') {
             header('Location: ' . $url);
