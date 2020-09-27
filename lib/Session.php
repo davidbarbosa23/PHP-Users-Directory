@@ -6,7 +6,7 @@ class Session
 {
     public function __construct()
     {
-        if(!isset($_SESSION) && env('APP_ENV') != 'development') {
+        if(!isset($_SESSION) && env('APP_ENV') != 'testing') {
             session_start();
         }
 
