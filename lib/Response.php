@@ -8,7 +8,7 @@ class Response
     {
         $blade = new Blade(
             VIEWS_PATH,
-            CACHE_PATH
+            CACHE_PATH . DS . 'views'
         );
 
         return $blade->make($view, $params);
