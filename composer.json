@@ -44,6 +44,29 @@
     "scripts": {
         "post-install-cmd": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "db-migrate": [
+            "php database/migrations/TablesMigrations.php"
+        ],
+        "db-seeds": [
+            "php database/seeds/TablesSeeds.php"
+        ],
+        "db-migrate-seeds": [
+            "php database/migrations/TablesMigrations.php",
+            "php database/seeds/TablesSeeds.php"
+        ],
+        "start-server": [
+            "php -S localhost:8080 -t ./public"
+        ],
+        "run-tests": [
+            "phpunit"
         ]
+    },
+    "scripts-descriptions": {
+        "db-migrate": "Get Database schema",
+        "db-seeds": "Add data to database",
+        "db-migrate-seeds": "Get Database schema and add data",
+        "start-server": "Start server with PHP",
+        "run-tests": "Run Tests"
     }
 }
