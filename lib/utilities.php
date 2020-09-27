@@ -37,7 +37,7 @@ if (!function_exists('validate')) {
                 'max' => 'The :attribute may not be greater than :value.',
                 'unique' => 'The :attribute has already been taken.',
                 'equals' => 'The :attribute must be equal to :value.',
-                'password' => 'The :attribute field is invalid.'
+                'password' => 'The :attribute must have characters as uppercase, lowercase and number.'
             ];
             $message = $customMessages[$type] ?? $messages[$type];
             $message = str_replace(':attribute', $field, $message);
@@ -85,7 +85,7 @@ if (!function_exists('validate')) {
                         }
                         break;
                     case 'password':
-                        if (preg_replace('/[^0-9]+/', '', $request->get($field)) === "") {
+                        if (!preg_match('@[A-Z]@', $request->get($field)) || !preg_match('@[a-z]@', $request->get($field)) || !preg_match('@[0-9]@', $request->get($field))) {
                             $errors[] = $setMessageError($customMessages, $attributes[0], $field);
                         }
                         break;

@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
 
     <title>@yield('title')</title>
 </head>
@@ -18,9 +19,6 @@
     @include('lib.header')
 
     <main role="main" class="flex-shrink-0 pt-5">
-        @includeWhen(isset($errors), 'lib.alerterror', ['errors' => $errors ?? []])
-        @includeWhen(isset($success), 'lib.alertsuccess', ['success' => $success ?? []])
-
         @yield('content')
     </main>
 

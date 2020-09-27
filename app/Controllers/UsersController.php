@@ -52,7 +52,8 @@ class UsersController extends AppController
             $user = new Users;
             if ($user->register($request)) {
                 unset($params['errors']);
-                $params['success'] = ['User registered successfully.'];
+                unset($params['data']);
+                $params['success'] = ['User registered successfully. <a href="/login" class="btn btn-primary">Login</a>'];
             } else {
                 $params['errors'] = ['Error to register user.'];
             }
