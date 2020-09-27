@@ -8,7 +8,7 @@ define('CACHE_PATH', BASE_PATH . 'tmp' . DS . 'cache');
 define('VIEWS_PATH', APP_PATH . DS . 'Views');
 define('URI_REDIRECT', ['/login', '/register']);
 
-require BASE_PATH . 'vendor/autoload.php';
+require BASE_PATH . 'vendor' . DS . 'autoload.php';
 
 // Load Envirinment Variables
 $dotenv = Dotenv\Dotenv::createImmutable(BASE_PATH);
