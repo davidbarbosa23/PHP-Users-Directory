@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Unit;
+namespace Tests;
 
 use PHPUnit\Framework\TestCase;
 use Illuminate\Database\Capsule\Manager as Capsule;
@@ -16,5 +16,4 @@ class TestBase extends TestCase
         defined('VIEWS_PATH') || define('VIEWS_PATH', APP_PATH . DS . 'Views');
         defined('URI_REDIRECT') || define('URI_REDIRECT', ['/login', '/register']);
     }
-
 }

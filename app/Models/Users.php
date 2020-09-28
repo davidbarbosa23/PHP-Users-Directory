@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Builder;
 
 class Users extends Model
 {
+    protected $table = 'users';
+
     protected $fillable = [
         'name',
         'country_id',

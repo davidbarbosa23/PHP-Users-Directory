@@ -9,6 +9,8 @@ class Countries extends Model
 {
     public $timestamps = false;
 
+    protected $table = 'countries';
+
     protected static function boot()
     {
         parent::boot();
