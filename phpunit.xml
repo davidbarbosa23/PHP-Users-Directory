@@ -9,11 +9,17 @@
          processIsolation="false"
          stopOnFailure="false">
     <testsuites>
-        <testsuite name="Unit">
-            <directory suffix="Test.php">./tests/Unit</directory>
+        <testsuite name="Project Test Suite">
+            <directory>tests</directory>
         </testsuite>
     </testsuites>
     <php>
+        <ini name="error_reporting" value="-1" />
         <env name="APP_ENV" value="testing"/>
     </php>
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">app</directory>
+        </whitelist>
+    </filter>
 </phpunit>

@@ -14,13 +14,13 @@
                 <button class="btn btn-primary my-2 my-sm-0" id="searchButton" type="submit">Search</button>
                 <div class="btn-group ml-sm-2" role="group">
                     <button type="button" class="btn btn-outline-secondary buttonData" onclick="updateData(1)">
-                        <span>Update Data (EN)</span>
+                        <span>Get Data (EN)</span>
                         <div class="spinner-border spinner-border-sm text-secondary d-none spinerData spiner-1" role="status">
                             <span class="sr-only">Loading...</span>
                         </div>
                     </button>
                     <button type="button" class="btn btn-outline-secondary buttonData" onclick="updateData(2)">
-                        <span>Update Data (ES)</span>
+                        <span>Get Data (ES)</span>
                         <div class="spinner-border spinner-border-sm text-secondary d-none spinerData spiner-2" role="status">
                             <span class="sr-only">Loading...</span>
                         </div>
