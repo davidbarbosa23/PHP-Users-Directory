@@ -34,10 +34,15 @@ $router->post(
     'App\Controllers\UsersController@registerProcess'
 );
 
-// Users route
+// Directory routes
 $router->get(
-    'users',
-    'App\Controllers\UsersController@index'
+    'search',
+    'App\Controllers\SearchController@index'
+);
+
+$router->get(
+    'search/update',
+    'App\Controllers\SearchController@updateData'
 );
 
 // 404

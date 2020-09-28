@@ -11,7 +11,15 @@ class UsersController extends AppController
 
     public function index()
     {
+        $request = new \Request;
+        $data = $request->get('q');
+
         $params = [];
+        if (isset($data)) {
+            $user = new Users;
+            $users = $user->search($data);
+            $params['users'] = $users;
+        }
 
         return view('users', $params);
     }
@@ -55,7 +63,7 @@ class UsersController extends AppController
                 unset($params['data']);
                 $params['success'] = ['User registered successfully. <a href="/login" class="btn btn-primary">Login</a>'];
             } else {
-                $params['errors'] = ['Error to register user.'];
+                $params['errors'] = ['Error to register user'];
             }
         }
 
@@ -79,10 +87,10 @@ class UsersController extends AppController
             $isValid = $this->validateCredentials($request);
             if ($isValid) {
                 $this->session->start($this->user);
-                return \Response::redirect('/users');
+                return \Response::redirect('/search');
             }
 
-            $validateResult = ['The email or password is invalid'];
+            $validateResult = ['Invalid credentials'];
         }
         $params = [
             'errors' => $validateResult,

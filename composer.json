@@ -4,6 +4,7 @@
     "type": "project",
     "require": {
         "php": "^7.4",
+        "guzzlehttp/guzzle": "^7.1",
         "illuminate/auth": "^8.6",
         "illuminate/database": "^8.6",
         "illuminate/routing": "^8.6",
@@ -33,6 +34,7 @@
             "lib/Response.php",
             "lib/Request.php",
             "lib/Session.php",
+            "lib/CustomerData.php",
             "lib/utilities.php"
         ]
     },

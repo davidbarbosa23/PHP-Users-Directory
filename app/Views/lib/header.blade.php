@@ -17,7 +17,7 @@ $session = new \Session();
                     </li>
                     @if($session->check())
                     <li class="nav-item ">
-                        <a class="nav-link" href="/users">Users Directory</a>
+                        <a class="nav-link" href="/search">Directory</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link btn btn-outline-secondary" href="/logout">Logout</a>
