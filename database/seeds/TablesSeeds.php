@@ -7,7 +7,7 @@ define('BASE_PATH', dirname(dirname(__DIR__)) . DS);
 require BASE_PATH . 'vendor' . DS . 'autoload.php';
 
 // Load Envirinment Variables
-$dotenv = Dotenv\Dotenv::create(BASE_PATH);
+$dotenv = Dotenv\Dotenv::createImmutable(BASE_PATH);
 $dotenv->load();
 
 // Database Connection
