@@ -14,6 +14,8 @@ Great, now you have ready the database, you can run the application with `PHP` s
 
 `composer start-server`
 
+By default it srtart on `http://localhost:8080`
+
 ## Aplication
 
 With the app running, the first step is register with a dummy user.
